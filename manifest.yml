@@ -1,0 +1,15 @@
+modules:
+  macro:
+    - key: gotcha-hello-world
+      function: main
+      title: gotcha
+      description: Inserts Hello world!
+  function:
+    - key: main
+      handler: index.run
+app:
+  id: ari:cloud:ecosystem::app/def2a522-cdff-4923-82c0-d88783aae2ba
+permissions:
+  scopes:
+    - read:page:confluence
+    - storage:app
