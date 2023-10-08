@@ -1,4 +1,4 @@
-import ForgeUI, { render, Fragment, Macro, Text, useProductContext, useState } from "@forge/ui";
+import ForgeUI, { render, Fragment, Macro, Text, useProductContext, useState, Table, Link, Cell, Row } from "@forge/ui";
 import api, { route, storage } from "@forge/api";
 
 
@@ -78,9 +78,27 @@ const App = () => {
 
   return (
     <Fragment>
-      <Text>Previous Page: {prevPage.title}</Text>
-      <Text>Current Page: {currPage.title}</Text>
-      <Text>Next Page: {nextPage.title}</Text>
+      <Table>
+        <Row>
+          <Cell>
+            <Text>
+              <Link appearance="link" href={"/wiki" + prevPage._links.webui}>
+                {prevPage.title}
+              </Link>
+            </Text>
+          </Cell>
+          <Cell>
+            <Text>Confluence Page Ring</Text>
+          </Cell>
+          <Cell>
+            <Text>
+              <Link appearance="link" herf={"/wiki" + nextPage._links.webui}>
+                {nextPage.title}
+              </Link>
+            </Text>
+          </Cell>
+        </Row>
+      </Table>
     </Fragment>
   );
 };
